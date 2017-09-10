@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "activationEvents": [
     "onCommand:extension.copyWithLineNumbers.withoutPath",
-    "onCommand:extension.copyWithLineNumbers.withFullPath"
+    "onCommand:extension.copyWithLineNumbers.withFullPath",
+    "onCommand:extension.copyWithLineNumbers.withFileName"
   ],
   "categories": [
     "Other"
@@ -17,6 +18,10 @@
       {
         "command": "extension.copyWithLineNumbers.withFullPath",
         "title": "Copy With Line Numbers: With Full Path"
+      },
+      {
+        "command": "extension.copyWithLineNumbers.withFileName",
+        "title": "Copy With Line Numbers: With File Name"
       }
     ]
   },

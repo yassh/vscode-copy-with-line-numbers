@@ -1,6 +1,7 @@
 'use strict'
 
 import * as vscode from 'vscode'
+import * as path from 'path'
 import { EOL } from 'os'
 import { copy } from 'copy-paste'
 import * as leftPad from 'left-pad'
@@ -10,6 +11,7 @@ const MULTI_SELECTION_SEPARATOR = '---'
 export const COMMAND_IDS = {
   WITHOUT_PATH: 'extension.copyWithLineNumbers.withoutPath',
   WITH_FULL_PATH: 'extension.copyWithLineNumbers.withFullPath',
+  WITH_FILE_NAME: 'extension.copyWithLineNumbers.withFileName',
 }
 
 function getLinesWithNumbers() {
@@ -47,6 +49,11 @@ const commands = {
   [COMMAND_IDS.WITH_FULL_PATH]: () => {
     const fullPath = vscode.window.activeTextEditor.document.fileName
     copyWithLineNumbers(fullPath)
+  },
+  [COMMAND_IDS.WITH_FILE_NAME]: () => {
+    const fullPath = vscode.window.activeTextEditor.document.fileName
+    const fileName = path.basename(fullPath)
+    copyWithLineNumbers(fileName)
   },
 }
 
