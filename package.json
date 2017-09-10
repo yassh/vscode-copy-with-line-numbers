@@ -1,39 +1,47 @@
 {
-    "name": "copy-with-line-numbers",
-    "displayName": "Copy With Line Numbers",
-    "description": "",
-    "version": "0.0.1",
-    "publisher": "yassh",
-    "engines": {
-        "vscode": "^1.16.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onCommand:extension.sayHello"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "npm run compile && node ./node_modules/vscode/bin/test"
-    },
-    "devDependencies": {
-        "typescript": "^2.5.2",
-        "vscode": "^1.1.5",
-        "mocha": "^3.5.0",
-        "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
-    }
+  "name": "copy-with-line-numbers",
+  "version": "0.0.1",
+  "activationEvents": [
+    "onCommand:extension.sayHello"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.sayHello",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
+    "fixpack": "^2.3.1",
+    "mocha": "^3.5.0",
+    "npm-run-all": "^4.1.1",
+    "tslint": "^5.7.0",
+    "tslint-config-airbnb": "^5.2.1",
+    "typescript": "^2.5.2",
+    "vscode": "^1.1.5"
+  },
+  "displayName": "Copy With Line Numbers",
+  "engines": {
+    "vscode": "^1.16.0"
+  },
+  "main": "./out/src/extension",
+  "publisher": "yassh",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "fix": "npm-run-all fix:*",
+    "fix:pack": "fixpack",
+    "fix:ts": "tslint './*.ts' './src/*.ts' './test/*.ts' --fix",
+    "lint": "npm-run-all lint:*",
+    "lint:ts": "tslint './*.ts' './src/*.ts' './test/*.ts'",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "vscode:prepublish": "npm run compile",
+    "watch": "tsc -watch -p ./"
+  }
 }
