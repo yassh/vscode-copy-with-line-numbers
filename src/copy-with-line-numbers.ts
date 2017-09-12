@@ -6,14 +6,17 @@ import { EOL } from 'os'
 import { copy } from 'copy-paste'
 import * as leftPad from 'left-pad'
 
-const MULTI_SELECTION_SEPARATOR = '---'
 const COPY_WITH_LINE_NUMBERS = 'extension.copyWithLineNumbers'
+const COPY_WITH_LINE_NUMBERS_WITHOUT_PATH = COPY_WITH_LINE_NUMBERS + '.withoutPath'
 const COPY_WITH_LINE_NUMBERS_WITH_FULL_PATH = COPY_WITH_LINE_NUMBERS + '.withFullPath'
 const COPY_WITH_LINE_NUMBERS_WITH_RELATIVE_PATH = COPY_WITH_LINE_NUMBERS + '.withRelativePath'
 const COPY_WITH_LINE_NUMBERS_WITH_FILE_NAME = COPY_WITH_LINE_NUMBERS + '.withFileName'
+
 const OPTION_WITH_FULL_PATH = 'withFullPath'
 const OPTION_WITH_RELATIVE_PATH = 'withRelativePath'
 const OPTION_WITH_FILE_NAME = 'withFileName'
+
+const MULTI_SELECTION_SEPARATOR = '---'
 
 function copyWithLineNumbers(option?) {
   const editor = vscode.window.activeTextEditor
@@ -65,7 +68,7 @@ function copyWithLineNumbers(option?) {
 }
 
 export const commands = {
-  [COPY_WITH_LINE_NUMBERS]: () => {
+  [COPY_WITH_LINE_NUMBERS_WITHOUT_PATH]: () => {
     copyWithLineNumbers()
   },
   [COPY_WITH_LINE_NUMBERS_WITH_FULL_PATH]: () => {
