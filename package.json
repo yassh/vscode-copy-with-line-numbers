@@ -4,6 +4,7 @@
   "activationEvents": [
     "onCommand:extension.copyWithLineNumbers",
     "onCommand:extension.copyWithLineNumbers.withFullPath",
+    "onCommand:extension.copyWithLineNumbers.withRelativePath",
     "onCommand:extension.copyWithLineNumbers.withFileName"
   ],
   "categories": [
@@ -18,6 +19,10 @@
       {
         "command": "extension.copyWithLineNumbers.withFullPath",
         "title": "Copy With Line Numbers: With Full Path"
+      },
+      {
+        "command": "extension.copyWithLineNumbers.withRelativePath",
+        "title": "Copy With Line Numbers: With Relative Path"
       },
       {
         "command": "extension.copyWithLineNumbers.withFileName",

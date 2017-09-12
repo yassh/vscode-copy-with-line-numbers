@@ -9,8 +9,10 @@ import * as leftPad from 'left-pad'
 const MULTI_SELECTION_SEPARATOR = '---'
 const COPY_WITH_LINE_NUMBERS = 'extension.copyWithLineNumbers'
 const COPY_WITH_LINE_NUMBERS_WITH_FULL_PATH = COPY_WITH_LINE_NUMBERS + '.withFullPath'
+const COPY_WITH_LINE_NUMBERS_WITH_RELATIVE_PATH = COPY_WITH_LINE_NUMBERS + '.withRelativePath'
 const COPY_WITH_LINE_NUMBERS_WITH_FILE_NAME = COPY_WITH_LINE_NUMBERS + '.withFileName'
 const OPTION_WITH_FULL_PATH = 'withFullPath'
+const OPTION_WITH_RELATIVE_PATH = 'withRelativePath'
 const OPTION_WITH_FILE_NAME = 'withFileName'
 
 function copyWithLineNumbers(option?) {
@@ -22,12 +24,16 @@ function copyWithLineNumbers(option?) {
 
   const document = editor.document
   const fullPath = document.fileName
+  const relativePath = path.relative(vscode.workspace.workspaceFolders[0].uri.fsPath, fullPath)
   const fileName = path.basename(fullPath)
 
   let file = ''
   switch (option) {
     case OPTION_WITH_FULL_PATH:
       file = fullPath
+      break
+    case OPTION_WITH_RELATIVE_PATH:
+      file = relativePath
       break
     case OPTION_WITH_FILE_NAME:
       file = fileName
@@ -64,6 +70,9 @@ export const commands = {
   },
   [COPY_WITH_LINE_NUMBERS_WITH_FULL_PATH]: () => {
     copyWithLineNumbers(OPTION_WITH_FULL_PATH)
+  },
+  [COPY_WITH_LINE_NUMBERS_WITH_RELATIVE_PATH]: () => {
+    copyWithLineNumbers(OPTION_WITH_RELATIVE_PATH)
   },
   [COPY_WITH_LINE_NUMBERS_WITH_FILE_NAME]: () => {
     copyWithLineNumbers(OPTION_WITH_FILE_NAME)
