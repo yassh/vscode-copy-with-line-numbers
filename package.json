@@ -2,7 +2,7 @@
   "name": "copy-with-line-numbers",
   "version": "0.0.1",
   "activationEvents": [
-    "onCommand:extension.copyWithLineNumbers.withoutPath",
+    "onCommand:extension.copyWithLineNumbers",
     "onCommand:extension.copyWithLineNumbers.withFullPath",
     "onCommand:extension.copyWithLineNumbers.withFileName"
   ],
@@ -12,7 +12,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.copyWithLineNumbers.withoutPath",
+        "command": "extension.copyWithLineNumbers",
         "title": "Copy With Line Numbers: Without Path"
       },
       {
