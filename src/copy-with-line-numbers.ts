@@ -63,8 +63,10 @@ function copyWithLineNumbers(option?) {
     }
   })
 
-  copy(str)
-  vscode.window.showInformationMessage('Copied!')
+  copy(str, () => {
+    const showSuccessMessage = vscode.workspace.getConfiguration('copyWithLineNumbers').get('showSuccessMessage')
+    if (showSuccessMessage) vscode.window.showInformationMessage('Copied!')
+  })
 }
 
 export const commands = {

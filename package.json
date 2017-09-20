@@ -11,6 +11,17 @@
     "Other"
   ],
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Copy With Line Numbers configuration",
+      "properties": {
+        "copyWithLineNumbers.showSuccessMessage": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show success message"
+        }
+      }
+    },
     "commands": [
       {
         "command": "extension.copyWithLineNumbers.withoutPath",
