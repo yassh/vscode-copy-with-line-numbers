@@ -63,6 +63,7 @@
   "engines": {
     "vscode": "^1.16.0"
   },
+  "icon": "images/icon.png",
   "keywords": [
     "copy",
     "line number"
