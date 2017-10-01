@@ -7,6 +7,9 @@
     "onCommand:extension.copyWithLineNumbers.withRelativePath",
     "onCommand:extension.copyWithLineNumbers.withFileName"
   ],
+  "bugs": {
+    "url": "https://github.com/yassh/vscode-copy-with-line-numbers/issues"
+  },
   "categories": [
     "Other"
   ],
@@ -60,8 +63,16 @@
   "engines": {
     "vscode": "^1.16.0"
   },
+  "keywords": [
+    "copy",
+    "line number"
+  ],
   "main": "./out/src/extension",
   "publisher": "yassh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yassh/vscode-copy-with-line-numbers.git"
+  },
   "scripts": {
     "compile": "tsc -p ./",
     "fix": "npm-run-all fix:*",
