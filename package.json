@@ -69,6 +69,7 @@
     "copy",
     "line number"
   ],
+  "license": "MIT",
   "main": "./out/src/extension",
   "publisher": "yassh",
   "repository": {
