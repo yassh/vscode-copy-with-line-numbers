@@ -1,7 +1,7 @@
 {
   "name": "copy-with-line-numbers",
   "description": "Copy selected lines with line number (and file path).",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "activationEvents": [
     "onCommand:extension.copyWithLineNumbers.withoutPath",
     "onCommand:extension.copyWithLineNumbers.withFullPath",

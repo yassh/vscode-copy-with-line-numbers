@@ -1,3 +1,6 @@
+### 0.0.4
+- Add license file
+
 ### 0.0.3
 - Add license
 
