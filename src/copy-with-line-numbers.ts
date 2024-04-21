@@ -64,10 +64,11 @@ function copyWithLineNumbers(option?) {
     }
   })
 
-  copy(str, () => {
-    const showSuccessMessage = vscode.workspace.getConfiguration('copyWithLineNumbers').get('showSuccessMessage')
-    if (showSuccessMessage) vscode.window.showInformationMessage('Copied!')
-  })
+  vscode.env.clipboard.writeText(str).then(() => {
+	const showSuccessMessage = vscode.workspace.getConfiguration('copyWithLineNumbers').get('showSuccessMessage');
+	if (showSuccessMessage)
+		vscode.window.showInformationMessage('Copied!');
+	})
 }
 
 export const commands = {
