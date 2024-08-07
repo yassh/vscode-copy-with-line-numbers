@@ -6,6 +6,13 @@ This package is an imitation of [Copy With Line Numbers Reloaded](https://packag
 
 ![Demo](images/demo.gif)
 
+## Requirements
+To use the extension in a Linux environment, you'll need to install `xclip`. Here’s how you can do it based on your distribution:
+
+* For Ubuntu, Debian, or Linux Mint, use: `sudo apt install xclip`
+* For Fedora, CentOS, AlmaLinux, or Redhat, use: `sudo dnf install xclip`
+* For Arch Linux or Manjaro, use: `sudo pacman -S xclip`
+
 ## Available commands
 
 * Copy With Line Numbers: Without Path
