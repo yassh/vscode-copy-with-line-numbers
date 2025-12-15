@@ -18,3 +18,7 @@ This package is an imitation of [Copy With Line Numbers Reloaded](https://packag
 |Property|Description|Type|Default value|
 |---|---|---|---|
 |`copyWithLineNumbers.showSuccessMessage`|Show success message.|Boolean|`true`|
+
+## Requirements
+
+* xclip, if you are using linux
